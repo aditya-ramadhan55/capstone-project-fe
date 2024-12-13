@@ -1,0 +1,142 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  /* Navbar */
+  nav {
+    background-color: #007bff;
+    color: #fff;
+    padding: 1rem;
+  }
+  
+  nav .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav .brand-name a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  nav .nav-list {
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav .nav-list li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+  }
+  
+  /* Header */
+  header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  
+  header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  header p {
+    font-size: 1.2rem;
+  }
+  
+  /* Container */
+  .container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  /* Forms */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  form input,
+  form button {
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  form input:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Error Messages */
+  #errorMessage {
+    color: #d9534f;
+    font-size: 0.9rem;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+  }
+  
+  footer a {
+    color: #fff;
+    text-decoration: underline;
+  }
+  
+  footer a:hover {
+    text-decoration: none;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    nav .nav-list {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  
+    header h2 {
+      font-size: 2rem;
+    }
+  
+    .container {
+      margin: 1rem;
+      padding: 1rem;
+    }
+  }
+  

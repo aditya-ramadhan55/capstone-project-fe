@@ -1,0 +1,30 @@
+runtime: nodejs18
+service: frontend
+
+handlers:
+
+- url: /src/images
+  static_dir: src/images
+
+- url: /src/scripts
+  static_dir: src/scripts
+
+- url: /src/styles
+  static_dir: src/styles
+
+- url: /dashboard.html
+  static_files: dashboard.html
+  upload: dashboard.html
+
+- url: /register.html
+  static_files: register.html
+  upload: register.html
+
+- url: /survey.html
+  static_files: survey.html
+  upload: survey.html
+
+- url: /.*
+  static_files: index.html
+  upload: index.html
+  secure: never
