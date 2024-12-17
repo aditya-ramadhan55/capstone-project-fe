@@ -1,30 +1,22 @@
-runtime: nodejs18
-service: frontend
+runtime: python39  # You can change this to another runtime if needed
 
 handlers:
+  - url: /
+    static_files: register.html
+    upload: register.html
 
-- url: /src/images
-  static_dir: src/images
+  - url: /src/styles/(.*)
+    static_files: src/styles/\1
+    upload: src/styles/(.*)
 
-- url: /src/scripts
-  static_dir: src/scripts
+  - url: /src/scripts/(.*)
+    static_files: src/scripts/\1
+    upload: src/scripts/(.*)
 
-- url: /src/styles
-  static_dir: src/styles
+  - url: /src/images/(.*)
+    static_files: src/images/\1
+    upload: src/images/(.*)
 
-- url: /dashboard.html
-  static_files: dashboard.html
-  upload: dashboard.html
-
-- url: /register.html
-  static_files: register.html
-  upload: register.html
-
-- url: /survey.html
-  static_files: survey.html
-  upload: survey.html
-
-- url: /.*
-  static_files: index.html
-  upload: index.html
-  secure: never
+  - url: /(.*)
+    static_files: \1
+    upload: (.*)
