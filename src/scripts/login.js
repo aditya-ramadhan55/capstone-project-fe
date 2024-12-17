@@ -27,7 +27,6 @@ document.getElementById('login-form').addEventListener('submit', async (event) =
     if (response.ok) {
       // Success: Store the token and user ID, then redirect to dashboard.html
       alert('Login successful!');
-      alert('Login successful!');
       localStorage.setItem('token', data.token); // Store the token in localStorage
       localStorage.setItem('id_user', data.id_user); // Store the user ID in localStorage
       window.location.href = 'dashboard.html'; // Redirect to dashboard
