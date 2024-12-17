@@ -310,6 +310,14 @@ th {
   font-size: 1rem; /* Consistent font size */
 }
 
+/* Style for the horizontal line */
+hr {
+  border: 0; /* Remove default border */
+  height: 1px; /* Set height of the line */
+  background-color: black; /* Set color of the line */
+  margin: 20px 0; /* Add some space above and below the line */
+}
+
 /* Responsive Design */
 @media (max-width: 600px) {
   .menu-button {
