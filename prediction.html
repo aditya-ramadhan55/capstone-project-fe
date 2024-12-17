@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediksi</title>
+</head>
+<body>
+    <main>
+        <h1>Pertanyaan</h1>
+        <form id="surveyForm" method="post">
+
+            <label for="family_history_with_overweight">Apakah ada anggota keluarga yang mengalami/menderita obesitas?</label><br>
+            <input type="radio" id="family_history_with_overweight_yes" name="family_history_with_overweight" value="iya">
+            <label for="family_history_with_overweight_yes">Iya</label><br>
+            <input type="radio" id="family_history_with_overweight_no" name="family_history_with_overweight" value="tidak">
+            <label for="family_history_with_overweight_no">Tidak</label><br><br>
+    
+            <label for="FAVC">Apakah anda biasanya mengonsumsi makanan berkalori tinggi?</label><br>
+            <input type="radio" id="FAVC_yes" name="FAVC" value="iya">
+            <label for="FAVC_yes">Iya</label><br>
+            <input type="radio" id="FAVC_no" name="FAVC" value="tidak">
+            <label for="FAVC_no">Tidak</label><br><br>
+    
+            <label for="FCVC">Apakah anda biasanya mengonsumsi sayuran dalam makanan anda?</label><br>
+            <input type="radio" id="FCVC_sometimes" name="FCVC" value="kadang-kadang">
+            <label for="FCVC_sometimes">Kadang-kadang</label><br>
+            <input type="radio" id="FCVC_always" name="FCVC" value="selalu">
+            <label for="FCVC_always">Selalu</label><br>
+            <input type="radio" id="FCVC_rarely" name="FCVC" value="jarang">
+            <label for="FCVC_rarely">Jarang</label><br><br>
+    
+            <label for="NCP">Berapa banyak makanan utama yang anda konsumsi setiap harinya?</label><br>
+            <input type="radio" id="NCP_once" name="NCP" value="sekali">
+            <label for="NCP_once">Sekali</label><br>
+            <input type="radio" id="NCP_twice" name="NCP" value="dua kali">
+            <label for="NCP_twice">Dua kali</label><br>
+            <input type="radio" id="NCP_thrice" name="NCP" value="tiga kali">
+            <label for="NCP_thrice">Tiga kali</label><br>
+            <input type="radio" id="NCP_more" name="NCP" value="lebih dari tiga kali">
+            <label for="NCP_more">Lebih dari tiga kali</label><br><br>
+    
+            <label for="CAEC">Apakah anda makan makanan diantara waktu makan?</label><br>
+            <input type="radio" id="CAEC_always" name="CAEC" value="selalu">
+            <label for="CAEC_always">Selalu</label><br>
+            <input type="radio" id="CAEC_often" name="CAEC" value="sering">
+            <label for="CAEC_often">Sering</label><br>
+            <input type="radio" id="CAEC_sometimes" name="CAEC" value="kadang-kadang">
+            <label for="CAEC_sometimes">Kadang-kadang</label><br>
+            <input type="radio" id="CAEC_never" name="CAEC" value="tidak">
+            <label for="CAEC_never">Tidak</label><br><br>
+    
+            <label for="SMOKE">Apakah anda merokok / seorang perokok?</label><br>
+            <input type="radio" id="SMOKE_yes" name="SMOKE" value="iya">
+            <label for="SMOKE_yes">Iya</label><br>
+            <input type="radio" id="SMOKE_no" name="SMOKE" value="tidak">
+            <label for="SMOKE_no">Tidak</label><br><br>
+    
+            <label for="CH2O">Berapa banyak air yang anda konsumsi setiap harinya?</label><br>
+            <input type="radio" id="CH2O_less" name="CH2O" value="kurang dari satu liter">
+            <label for="CH2O_less">Kurang dari satu liter</label><br>
+            <input type="radio" id="CH2O_1to2" name="CH2O" value="kisaran antara 1-2 liter">
+            <label for="CH2O_1to2">Kisaran antara 1-2 liter</label><br>
+            <input type="radio" id="CH2O_more" name="CH2O" value="lebih dari 2 liter">
+            <label for="CH2O_more">Lebih dari 2 liter</label><br><br>
+    
+            <label for="SCC">Apakah anda memantau kalori yang anda makan setiap hari?</label><br>
+            <input type="radio" id="SCC_yes" name="SCC" value="iya">
+            <label for="SCC_yes">Iya</label><br>
+            <input type="radio" id="SCC_no" name="SCC" value="tidak">
+            <label for="SCC_no">Tidak</label><br><br>
+    
+            <label for="FAF">Seberapa sering anda melakukan aktivitas fisik?</label><br>
+            <input type="radio" id="FAF_none" name="FAF" value="tidak ada aktivitas fisik">
+            <label for="FAF_none">Tidak ada aktivitas fisik</label><br>
+            <input type="radio" id="FAF_1to2" name="FAF" value="kisaran 1-2 hari">
+            <label for="FAF_1to2">Kisaran 1-2 hari</label><br>
+            <input type="radio" id="FAF_3to4" name="FAF" value="kisaran 3-4 hari">
+            <label for="FAF_3to4">Kisaran 3-4 hari</label><br>
+            <input type="radio" id="FAF_5to6" name="FAF" value="kisaran 5-6 hari atau lebih">
+            <label for="FAF_5to6">Kisaran 5-6 hari atau lebih</label><br><br>
+    
+            <label for="TUE">Berapa banyak waktu yang biasanya anda gunakan dalam menggunakan ponsel, televisi, komputer, dll?</label><br>
+            <input type="radio" id="TUE_0to2" name="TUE" value="kisaran 0-2 jam">
+            <label for="TUE_0to2">Kisaran 0-2 jam</label><br>
+            <input type="radio" id="TUE_3to5" name="TUE" value="kisaran antara 3-5 jam">
+            <label for="TUE_3to5">Kisaran antara 3-5 jam</label><br>
+            <input type="radio" id="TUE_more" name="TUE" value="lebih dari 5 jam">
+            <label for="TUE_more">Lebih dari 5 jam</label><br><br>
+    
+            <label for="CALC">Seberapa sering anda minum alkohol?</label><br>
+            <input type="radio" id="CALC_always" name="CALC" value="selalu">
+            <label for="CALC_always">Selalu</label><br>
+            <input type="radio" id="CALC_often" name="CALC" value="sering">
+            <label for="CALC_often">Sering</label><br>
+            <input type="radio" id="CALC_sometimes" name="CALC" value="kadang-kadang">
+            <label for="CALC_sometimes">Kadang-kadang</label><br>
+            <input type="radio" id="CALC_never" name="CALC" value="tidak">
+            <label for="CALC_never">Tidak</label><br><br>
+    
+            <label for="MTRANS">Transportasi apa yang biasanya anda gunakan?</label><br>
+            <input type="radio" id="MTRANS_public" name="MTRANS" value="transportasi umum">
+            <label for="MTRANS_public">Transportasi umum</label><br>
+            <input type="radio" id="MTRANS_car" name="MTRANS" value="mobil">
+            <label for="MTRANS_car">Mobil</label><br>
+            <input type="radio" id="MTRANS_walk" name="MTRANS" value="jalan kaki">
+            <label for="MTRANS_walk">Jalan kaki</label><br>
+            <input type="radio" id="MTRANS_motorcycle" name="MTRANS" value="sepeda motor">
+            <label for="MTRANS_motorcycle">Sepeda motor</label><br>
+            <input type="radio" id="MTRANS_bicycle" name="MTRANS" value="sepeda">
+            <label for="MTRANS_bicycle">Sepeda</label><br><br>
+    
+            <input type="submit" value="Submit">
+        </form>
+    </main>
+    <script src="src/scripts/prediction.js"></script>
+</body>
+</html>
