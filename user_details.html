@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+    <link rel="stylesheet" href="src/styles/styles.css">
+</head>
+<body>
+    <header class="user-account-header">
+        <button onclick="window.location.href='dashboard.html'" class="back-button">&#8592; Back to Dashboard</button>
+        <div class="header-title">
+            <h1>User Details</h1>
+        </div>
+    </header>
+    
+    <main>
+        <div class="card"> <!-- Added card wrapper -->
+            <div id="userDetails">
+                <div class="profile-header">
+                    <h3>User Information</h3>
+                </div>
+                <div>
+                    <strong>Gender:</strong> <span id="gender"></span>
+                </div>
+                <div>
+                    <strong>Height:</strong> <span id="height"></span> m
+                </div>
+                <div>
+                    <strong>Weight:</strong> <span id="weight"></span> kg
+                </div>
+                <div>
+                    <strong>Age:</strong> <span id="age"></span> years
+                </div>
+                <div>
+                    <strong>BMI:</strong> <span id="bmi"></span>
+                </div>
+                <div>
+                    <strong>User Obesity Level:</strong> <span id="userObesityLevel"></span>
+                </div>
+                <button id="predictButton" style="display: none;">Predict Obesity Level</button>
+            </div>
+        </div> <!-- End of card wrapper -->
+    </main>
+    
+    <script src="src/scripts/user_details.js"></script>
+</body>
+</html>

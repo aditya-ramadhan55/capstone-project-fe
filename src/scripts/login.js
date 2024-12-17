@@ -23,13 +23,29 @@ document.getElementById('login-form').addEventListener('submit', async (event) =
     const data = await response.json();
     console.log('Login Response:', data); // Log the response data
 
-
     if (response.ok) {
-      // Success: Store the token and user ID, then redirect to dashboard.html
+      // Success: Store the token and user ID
       alert('Login successful!');
       localStorage.setItem('token', data.token); // Store the token in localStorage
       localStorage.setItem('id_user', data.id_user); // Store the user ID in localStorage
-      window.location.href = 'dashboard.html'; // Redirect to dashboard
+
+      // Check if user details exist
+      const userDetailsResponse = await fetch(`${BASE_URL}/prediksi/getUserDetails`, {
+        method: 'GET',
+        headers: {
+          'Authorization': data.token,
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (userDetailsResponse.ok) {
+        const userDetailsData = await userDetailsResponse.json();
+        // If user details exist, redirect to dashboard
+        window.location.href = 'dashboard.html'; // Redirect to dashboard
+      } else {
+        // If fetching user details fails, redirect to prediction page
+        window.location.href = 'prediction.html'; // Redirect to survey page
+      }
     } else {
       // Error: Display error message
       document.getElementById('error').textContent = data.message || 'Login failed!';
