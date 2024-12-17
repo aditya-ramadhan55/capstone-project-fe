@@ -44,7 +44,7 @@ document.getElementById('login-form').addEventListener('submit', async (event) =
         window.location.href = 'dashboard.html'; // Redirect to dashboard
       } else {
         // If fetching user details fails, redirect to prediction page
-        window.location.href = 'prediction.html'; // Redirect to survey page
+        window.location.href = 'survey.html'; // Redirect to survey page
       }
     } else {
       // Error: Display error message
