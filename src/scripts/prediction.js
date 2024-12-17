@@ -5,7 +5,9 @@ const ENDPOINT = {
 };
 
 const token = localStorage.getItem('token');
+const userId = localStorage.getItem('id_user');
 console.log('Token:', token); // Log the token
+console.log('User ID:', userId); // Log the user ID
 
 document.getElementById('surveyForm').addEventListener('submit', async function(event) {
 
@@ -31,7 +33,7 @@ document.getElementById('surveyForm').addEventListener('submit', async function(
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`, // Include the token here
+            'Authorization': token, // Include the token here
         },
         body: JSON.stringify(entries), // Your request body
     });
