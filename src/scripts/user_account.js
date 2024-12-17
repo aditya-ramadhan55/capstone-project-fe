@@ -8,9 +8,6 @@ async function fetchUserAccount() {
   // Retrieve the user ID from localStorage
   const userId = localStorage.getItem('id_user');
 
-  console.log('Token:', token); // Log the token
-  console.log('User  ID:', userId); // Log the user ID
-
   if (!userId) {
     document.getElementById('userInfo').textContent = 'User  ID not found. Please log in again.';
     return;
@@ -20,20 +17,18 @@ async function fetchUserAccount() {
     const response = await fetch(`${BASE_URL}/api/user/${userId}`, {
       method: 'GET',
       headers: {
-        'Authorization': token, // Removed 'Bearer ' prefix
+        'Authorization': token, 
         'Content-Type': 'application/json',
       },
     });
 
-    console.log('Response Status:', response.status); // Log the response status
-
     if (response.ok) {
       const data = await response.json();
+      const defaultImage = 'src/images/default-profile.png'; // Path to your default image
       document.getElementById('userInfo').innerHTML = `
         <p>Username: ${data.username}</p>
-        <p>Email: ${data.email || 'N/A'}</p>
         <p>Account Created: ${new Date(data.created_at).toLocaleString()}</p>
-        <p>Profile Image: <img src="${data.user_profile_image}" alt="Profile Image" class="profile-image"></p>
+        <p><img src="${data.user_profile_image || defaultImage}" alt="Profile Image" class="profile-image"></p>
         <p>Feedback:</p>
         <ul>
           ${data.feedback.map(f => `
@@ -47,7 +42,7 @@ async function fetchUserAccount() {
 
       // Populate the edit form with current user data
       document.getElementById('username').value = data.username;
-      document.getElementById('profileImage').value = data.user_profile_image;
+      // No need to set profileImage value since the input field is removed
     } else {
       document.getElementById('userInfo').textContent = 'Failed to fetch user account information.';
       console.error('Error fetching user account:', response.statusText); // Log the error
@@ -69,13 +64,22 @@ async function updateProfile(event) {
   const password = document.getElementById('password').value; // Get the new password
   const imageUpload = document.getElementById('imageUpload').files[0]; // Get the uploaded file
 
+  // Debugging: Log the input values
+  console.log('Username:', username);
+  console.log('Password:', password); // Be cautious about logging sensitive information
+  console.log('Image Upload:', imageUpload);
+
   // Create a FormData object to handle file upload
   const formData = new FormData();
   formData.append('username', username);
   formData.append('password', password); // Ensure the new password is included
 
   if (imageUpload) {
-    formData.append('imageUpload', imageUpload); // Append the uploaded file
+    formData.append('user_profile_image', imageUpload); // Append the uploaded file
+  }
+
+  for (let pair of formData.entries()) {
+    console.log(`${pair[0]}: ${pair[1]}`);
   }
 
   try {
@@ -87,6 +91,11 @@ async function updateProfile(event) {
       },
       body: formData, // Use FormData as the body
     });
+
+    // Log the response status and body
+    console.log('Response Status:', response.status);
+    const responseBody = await response.text(); // Get the response body as text
+    console.log('Response Body:', responseBody);
 
     if (response.ok) {
       alert('Profile updated successfully! You will be logged out now.');
