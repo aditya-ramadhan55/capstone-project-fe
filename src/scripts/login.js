@@ -21,11 +21,15 @@ document.getElementById('login-form').addEventListener('submit', async (event) =
 
     // Parse the JSON response
     const data = await response.json();
+    console.log('Login Response:', data); // Log the response data
+
 
     if (response.ok) {
-      // Success: Store the token and redirect to dashboard.html
+      // Success: Store the token and user ID, then redirect to dashboard.html
+      alert('Login successful!');
       alert('Login successful!');
       localStorage.setItem('token', data.token); // Store the token in localStorage
+      localStorage.setItem('id_user', data.id_user); // Store the user ID in localStorage
       window.location.href = 'dashboard.html'; // Redirect to dashboard
     } else {
       // Error: Display error message

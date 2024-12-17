@@ -16,8 +16,26 @@
     </ul>
   </nav>
   <main>
-    <h1>User Account</h1>
-    <div id="userInfo" class="user-info"></div>
+    <h1>User Account Profile</h1>
+    <div id="userInfo" class="user-info">
+      <!-- User information will be populated here -->
+    </div>
+    
+    <h2>Edit Profile</h2>
+    <form id="editProfileForm">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required />
+
+      <label for="password">New Password:</label>
+      <input type="password" id="password" name="password" required />
+
+      <label for="imageUpload">Upload Image:</label>
+      <input type="file" id="imageUpload" name="imageUpload" accept="image/*" required />
+
+      <button type="submit">Update Profile</button>
+    </form>
+
+    <!-- Logout Button -->
     <button id="logoutButton">Logout</button>
   </main>
   <script src="src/scripts/user_account.js"></script>
