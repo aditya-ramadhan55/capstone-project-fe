@@ -7,30 +7,35 @@
   <link rel="stylesheet" href="src/styles/styles.css">
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><a href="dashboard.html">Dashboard</a></li>
-      <li><a href="user_account.html">User  Account</a></li>
-    </ul>
-  </nav>
-  <main>
-    <h1>User Account Profile</h1>
-    <div class="card">
-      <div class="profile-header">
-        <img id="profileImage" src="src/images/default-profile.png" alt="Profile Image">
-        <div class="username-container">
-          <h2 id="usernameDisplay">Username</h2>
-          <button class="edit-button" onclick="editUsername()">✏️</button>
-        </div>
-      </div>
-      <p>Account Created: <span id="accountCreated"></span></p>
-      <h3>Feedback:</h3>
-      <ul id="feedbackList"></ul>
+ <header class="user-account-header">
+    <button onclick="window.location.href='dashboard.html'" class="back-button">&#8592; Back to Dashboard</button>
+    <div class="header-title">
+        <h1>User Account Profile</h1>
     </div>
-
-    <!-- Logout Button -->
-    <button id="logoutButton">Logout</button>
+</header>
+  
+  <main>
+    <div class="card"> <!-- Added card wrapper -->
+      <div id="userInfo">
+        <div class="profile-header">
+          <img id="profileImage" src="src/images/default-profile.png" alt="Profile Image">
+          <div class="username-container">
+            <span id="usernameDisplay">Username</span>
+            <button class="edit-button" onclick="editUsername()">✏️</button>
+          </div>
+        </div>
+        <div>
+          <strong>Account Created:</strong> <span id="accountCreated"></span>
+        </div>
+        <div>
+          <h3>Feedback</h3>
+          <ul id="feedbackList"></ul>
+        </div>
+        <button id="logoutButton">Logout</button>
+      </div>
+    </div> <!-- End of card wrapper -->
   </main>
+  
   <script src="src/scripts/user_account.js"></script>
 </body>
 </html>

@@ -18,30 +18,122 @@ nav {
   z-index: 1000; /* Ensure it stays above other content */
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  justify-content: center; /* Center the nav items */
-}
-
-nav ul li {
-  margin-right: 20px;
-}
-
-nav ul li a {
+/* Navbar */
+nav {
+  background: #333;
   color: #fff;
-  text-decoration: none;
+  padding: 10px 0;
+  width: 100%; /* Make the navbar full width */
+  position: fixed; /* Fix the navbar at the top */
+  top: 0; /* Align it to the top */
+  left: 0; /* Align it to the left */
+  z-index: 1000; /* Ensure it stays above other content */
+}
+
+/* Header Styles */
+header {
+  background: #333; /* Same as navbar */
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center; /* Center items vertically */
+  justify-content: space-between; /* Space between menu and title */
+}
+
+header h1 {
+  margin: 0; /* Remove default margin */
+}
+
+.menu {
+  position: relative;
+  display: inline-block;
+}
+
+/* Header Styles */
+.dashboard-header {
+  background: #333; /* Same as navbar */
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+}
+
+.header-title {
+  flex-grow: 1; /* Allow the title to take up available space */
+  text-align: center; /* Center the title text */
+}
+
+.menu-button {
+  background: #333;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    height: 100%; /* Full height */
+    width: 250px; /* Width of the sidebar */
+    position: fixed; /* Fixed position */
+    top: 0; /* Align to the top */
+    left: -250px; /* Hide it off-screen initially */
+    background-color: #333; /* Background color */
+    color: white; /* Text color */
+    transition: 0.3s; /* Smooth transition */
+    padding-top: 20px; /* Padding at the top */
+    z-index: 1000; /* Ensure it stays above other content */
+}
+
+.sidebar a, .sidebar button {
+    padding: 10px 15px; /* Padding for links and buttons */
+    text-decoration: none; /* No underline */
+    color: white; /* Text color */
+    display: block; /* Make links block elements */
+}
+
+.sidebar a:hover, .sidebar button:hover {
+    background-color: #575757; /* Change background on hover */
+}
+
+/* Show the sidebar */
+.sidebar.show {
+    left: 0; /* Move it into view */
+}
+
+/* User Account Header */
+.user-account-header {
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  background: #333;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.user-account-header .back-button {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.5rem; /* Adjusted size for the back button icon */
+  position: absolute; /* Position it to the left */
+  left: 20px; /* Adjust as needed */
+}
+
+.user-account-header h1 {
+  flex-grow: 1; /* Allow the title to take up available space */
+  text-align: center; /* Center the title text */
+  margin: 0; /* Remove default margin */
 }
 
 /* Main content */
 main {
   padding-top: 60px; /* Add padding to prevent content from being hidden behind the navbar */
-}
-
-h1 {
-  color: #333;
-  text-align: center; /* Center the main heading */
+  display: flex;
+  justify-content: center; /* Center the card horizontally */
 }
 
 /* Card Styles */
@@ -50,10 +142,12 @@ h1 {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  max-width: 600px; /* Set a max width for the card */
-  margin: 20px auto; /* Center the card */
+  max-width: 800px; /* Set a max width for the card */
+  width: 100%; /* Make the card responsive */
+  margin: 20px auto; /* Center the card horizontally */
 }
 
+/* Profile Header */
 .profile-header {
   display: flex;
   align-items: center;
@@ -62,11 +156,11 @@ h1 {
 
 .profile-header img {
   border-radius: 50%;
-  width: 100px; /* Set the width of the profile image */
-  height: 100px; /* Set the height of the profile image */
+  width: 60px; /* Adjusted width of the profile image */
+  height: 60px; /* Adjusted height of the profile image */
   object-fit: cover; /* Ensures the image covers the area without distortion */
-  margin-right: 20px; /* Space between image and text */
-  border: 3px solid #007bff; /* Border around the image */
+  margin-right: 15px; /* Space between image and text */
+  border: 2px solid #007bff; /* Adjusted border size */
 }
 
 .username-container {
@@ -78,17 +172,13 @@ h1 {
   background: none;
   border: none;
   cursor: pointer;
-  margin-left: 10px; /* Space between username and pencil button */
+  margin-left: 5px; /* Space between username and pencil button */
   color: #007bff;
-  font-size: 1.2rem;
-}
-
-.edit-button:hover {
-  color: #0056b3;
+  font-size: 1rem; /* Adjusted font size */
 }
 
 .user-info p {
-  margin: 10px 0;
+  margin: 5px 0; /* Adjusted margin for user info paragraphs */
 }
 
 h3 {
@@ -109,39 +199,42 @@ h3 {
   margin-bottom: 10px; /* Space between feedback items */
 }
 
-/* Logout Button */
-button {
-  background: #007bff;
-  color: #fff;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  display: block; /* Make the button block */
-  margin: 20px auto; /* Center the logout button */
+/* Feedback List */
+#feedbackList li:hover {
+  background: #e9e9e9; /* Change background on hover */
 }
 
-button:hover {
-  background: #0056b3;
+/* Dashboard Specific Styles */
+.dashboard {
+  display: flex; /* Use flexbox for the dashboard layout */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  padding: 20px; /* Add padding around the dashboard */
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column; /* Stack nav items on smaller screens */
-    align-items: center; /* Center nav items */
+/* Table Styles */
+table {
+  width: 100%; /* Make the table full width */
+  border-collapse: collapse; /* Remove space between table cells */
+}
+
+th, td {
+  border: 1px solid #ddd; /* Add border to table cells */
+  padding: 8px; /* Add padding to table cells */
+  text-align: left; /* Align text to the left */
+}
+
+th {
+  background-color: #f2f2f2; /* Light background for table headers */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .menu-button {
+    width: 100%; /* Make the menu button full width on small screens */
   }
 
   .card {
-    margin: 10px; /* Reduce margin on smaller screens */
-  }
-
-  .profile-header img {
-    width: 80px; /* Adjust image size for smaller screens */
-    height: 80px;
-  }
-
-  h1 {
-    font-size: 1.8rem; /* Adjust heading size */
+    margin: 10px; /* Reduce margin on small screens */
   }
 }
