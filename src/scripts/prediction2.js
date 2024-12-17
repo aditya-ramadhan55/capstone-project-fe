@@ -9,6 +9,8 @@ console.log('Token:', token); // Log the token
 
 document.getElementById('healthForm').addEventListener('submit', async function(event) {
   event.preventDefault();
+  // Show loading indicator
+  document.getElementById('loading').style.display = 'block';
 
   // Get values from the form inputs
   let formData = new FormData(this);
@@ -37,6 +39,10 @@ document.getElementById('healthForm').addEventListener('submit', async function(
 
     // Parse the JSON response
     const data = await response.json();
+
+    // Hide loading indicator
+    document.getElementById('loading').style.display = 'none';
+
 
     if (response.ok) {
       // Prediction successful, display the result

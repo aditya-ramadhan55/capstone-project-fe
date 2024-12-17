@@ -8,6 +8,8 @@ const token = localStorage.getItem('token');
 
 document.getElementById('predictionForm').addEventListener('submit', async function(event) {
     event.preventDefault(); // Prevent page reload
+    // Show loading indicator
+    document.getElementById('loading').style.display = 'block';
 
     // Get values from the form inputs
     const familyHistory = document.querySelector('input[name="family_history_with_overweight"]:checked').value;
@@ -58,6 +60,8 @@ document.getElementById('predictionForm').addEventListener('submit', async funct
 
         // Parse the JSON response
         const data = await response.json();
+        // Hide loading indicator
+        document.getElementById('loading').style.display = 'none';
 
         if (response.ok) {
             // Prediction successful, display result

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="src/styles/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Feedback</h1>
+    </header>
+    <main id="feedbackMain"> <!-- Added id to main -->
+        <div class="survey-card"> <!-- Card wrapper -->
+            <p>Silakan berikan feedback Anda di bawah ini untuk membantu kami meningkatkan layanan kami.</p>
+            <form id="feedbackForm" method="post">
+                <div class="star-rating">
+                    <input type="radio" id="star5" name="rating" value="5" required>
+                    <label for="star5">★</label>
+                    <input type="radio" id="star4" name="rating" value="4" required>
+                    <label for="star4">★</label>
+                    <input type="radio" id="star3" name="rating" value="3" required>
+                    <label for="star3">★</label>
+                    <input type="radio" id="star2" name="rating" value="2" required>
+                    <label for="star2">★</label>
+                    <input type="radio" id="star1" name="rating" value="1" required>
+                    <label for="star1">★</label>
+                </div>
+                <hr>
+                <label for="description">Deskripsi:</label><br>
+                <textarea id="description" name="description" rows="4" required></textarea><br><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div> <!-- End of card wrapper -->
+    </main>
+    <script src="src/scripts/feedback.js"></script>
+</body>
+</html>

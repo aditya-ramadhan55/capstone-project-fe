@@ -29,13 +29,17 @@ async function fetchUserAccount() {
 
       // Populate feedback list
       const feedbackList = document.getElementById('feedbackList');
-      feedbackList.innerHTML = data.feedback.map(f => `
-        <li>
-          <strong>Rating:</strong> ${generateStars(f.rating)} <br>
-          <strong>Description:</strong> ${f.description} <br>
-          <em>Created at: ${new Date(f.created_at).toLocaleString()}</em>
-        </li>
-      `).join('');
+      if (data.feedback.length === 0) {
+        feedbackList.innerHTML = '<li>Anda belum memberikan Feedback, Silahkan berikan feedback Anda di halaman feedback yang dapat diakses melalui menu</li>';
+      } else {
+        feedbackList.innerHTML = data.feedback.map(f => `
+          <li>
+            <strong>Rating:</strong> ${generateStars(f.rating)} <br>
+            <strong>Description:</strong> ${f.description} <br>
+            <em>Created at: ${new Date(f.created_at).toLocaleString()}</em>
+          </li>
+        `).join('');
+      }
     } else {
       document.getElementById('userInfo').textContent = 'Failed to fetch user account information.';
       console.error('Error fetching user account:', response.statusText);

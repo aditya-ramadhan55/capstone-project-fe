@@ -22,14 +22,6 @@ async function fetchUserDetails() {
             document.getElementById('age').textContent = data.data.age;
             document.getElementById('bmi').textContent = data.data.bmi;
             document.getElementById('userObesityLevel').textContent = data.data.user_obesity_level || 'Not available';
-
-            // Show the predict button if user_obesity_level is null
-            if (data.data.user_obesity_level === null) {
-                document.getElementById('predictButton').style.display = 'block';
-                document.getElementById('predictButton').addEventListener('click', () => {
-                    window.location.href = 'prediction.html'; // Redirect to prediction page
-                });
-            }
         } else {
             console.error('Error fetching user details:', data.message);
             alert('Failed to fetch user details: ' + data.message);

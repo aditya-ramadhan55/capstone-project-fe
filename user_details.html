@@ -15,29 +15,46 @@
     </header>
     
     <main>
-        <div class="card"> <!-- Added card wrapper -->
+        <div class="ud-card"> <!-- Added card wrapper -->
+            <button onclick="window.location.href='survey.html'" class="update-button">Update User Details</button> <!-- Update User Details Button -->
             <div id="userDetails">
                 <div class="profile-header">
-                    <h3>User Information</h3>
+                    <h3>User Details</h3>
                 </div>
-                <div>
-                    <strong>Gender:</strong> <span id="gender"></span>
-                </div>
-                <div>
-                    <strong>Height:</strong> <span id="height"></span> m
-                </div>
-                <div>
-                    <strong>Weight:</strong> <span id="weight"></span> kg
-                </div>
-                <div>
-                    <strong>Age:</strong> <span id="age"></span> years
-                </div>
-                <div>
-                    <strong>BMI:</strong> <span id="bmi"></span>
-                </div>
-                <div>
-                    <strong>User Obesity Level:</strong> <span id="userObesityLevel"></span>
-                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Detail</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Gender</td>
+                            <td><span id="gender"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Height</td>
+                            <td><span id="height"></span> m</td>
+                        </tr>
+                        <tr>
+                            <td>Weight</td>
+                            <td><span id="weight"></span> kg</td>
+                        </tr>
+                        <tr>
+                            <td>Age</td>
+                            <td><span id="age"></span> years</td>
+                        </tr>
+                        <tr>
+                            <td>BMI</td>
+                            <td><span id="bmi"></span></td>
+                        </tr>
+                        <tr>
+                            <td>User Obesity Level</td>
+                            <td><span id="userObesityLevel"></span></td>
+                        </tr>
+                    </tbody>
+                </table>
                 <button id="predictButton" style="display: none;">Predict Obesity Level</button>
             </div>
         </div> <!-- End of card wrapper -->

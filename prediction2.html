@@ -7,36 +7,41 @@
     <link rel="stylesheet" href="src/styles/styles.css">
 </head>
 <body>
-    <main>
-        <h1>Pertanyaan</h1>
-        <form id="healthForm" method="post">
-
-            <label for="hypertension_status">Apakah anda memiliki hipertensi?</label><br>
-            <input type="radio" id="hypertension_status_yes" name="hypertension_status" value="iya">
-            <label for="hypertension_status_yes">Iya</label><br>
-            <input type="radio" id="hypertension_status_no" name="hypertension_status" value="tidak">
-            <label for="hypertension_status_no">Tidak</label><br><br>
-    
-            <label for="diabetes_status">Apakah anda penderita diabetes?</label><br>
-            <input type="radio" id="diabetes_status_yes" name="diabetes_status" value="iya">
-            <label for="diabetes_status_yes">Iya</label><br>
-            <input type="radio" id="diabetes_status_no" name="diabetes_status" value="tidak">
-            <label for="diabetes_status_no">Tidak</label><br><br>
-    
-            <label for="fitness_goal">Apa tujuan kebugaran anda?</label><br>
-            <input type="radio" id="fitness_goal_weight_loss" name="fitness_goal" value="Weight Loss">
-            <label for="fitness_goal_weight_loss">Weight Loss</label><br>
-            <input type="radio" id="fitness_goal_weight_gain" name="fitness_goal" value="Weight Gain">
-            <label for="fitness_goal_weight_gain">Weight Gain</label><br><br>
-    
-            <label for="fitness_type">Apa jenis kebugaran yang anda inginkan?</label><br>
-            <input type="radio" id="fitness_type_cardio" name="fitness_type" value="Cardio Fitness">
-            <label for="fitness_type_cardio">Cardio Fitness</label><br>
-            <input type="radio" id="fitness_type_muscular" name="fitness_type" value="Muscular Fitness">
-            <label for="fitness_type_muscular">Muscular Fitness</label><br><br>
-    
-            <input type="submit" value="Submit">
-        </form>
+    <header>
+        <h1>Survey</h1>
+    </header>
+    <main id="surveyMain"> <!-- Added id to main for styling -->
+        <p>Silakan isi data di bawah ini untuk membantu kami memahami kesehatan Anda dengan lebih baik.</p>
+        <div class="survey-card"> <!-- Card wrapper -->
+            <form id="healthForm" method="post">
+                <label for="hypertension_status">Apakah anda memiliki hipertensi?</label><br>
+                <input type="radio" id="hypertension_status_yes" name="hypertension_status" value="iya" required>
+                <label for="hypertension_status_yes">Iya</label><br>
+                <input type="radio" id="hypertension_status_no" name="hypertension_status" value="tidak" required>
+                <label for="hypertension_status_no">Tidak</label><br><br>
+                <hr>
+                <label for="diabetes_status">Apakah anda penderita diabetes?</label><br>
+                <input type="radio" id="diabetes_status_yes" name="diabetes_status" value="iya" required>
+                <label for="diabetes_status_yes">Iya</label><br>
+                <input type="radio" id="diabetes_status_no" name="diabetes_status" value="tidak" required>
+                <label for="diabetes_status_no">Tidak</label><br><br>
+                <hr>
+                <label for="fitness_goal">Apa tujuan kebugaran anda?</label><br>
+                <input type="radio" id="fitness_goal_weight_loss" name="fitness_goal" value="Weight Loss" required>
+                <label for="fitness_goal_weight_loss">Weight Loss</label><br>
+                <input type="radio" id="fitness_goal_weight_gain" name="fitness_goal" value="Weight Gain" required>
+                <label for="fitness_goal_weight_gain">Weight Gain</label><br><br>
+                <hr>
+                <label for="fitness_type">Apa jenis kebugaran yang anda inginkan?</label><br>
+                <input type="radio" id="fitness_type_cardio" name="fitness_type" value="Cardio Fitness" required>
+                <label for="fitness_type_cardio">Cardio Fitness</label><br>
+                <input type="radio" id="fitness_type_muscular" name="fitness_type" value="Muscular Fitness" required>
+                <label for="fitness_type_muscular">Muscular Fitness</label><br><br>
+        
+                <input type="submit" value="Submit">
+            </form>
+            <div id="loading" style="display: none;">Loading...</div>
+        </div> <!-- End of card wrapper -->
     </main>
     <script src="src/scripts/prediction2.js"></script>
 </body>
