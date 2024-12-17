@@ -41,7 +41,14 @@ document.getElementById('healthForm').addEventListener('submit', async function(
     if (response.ok) {
       // Prediction successful, display the result
       alert(`Prediction successful! Result: ${data.message}`);
-      window.location.href = 'dashboard.html';    
+
+      // Display the actual result from the response
+      console.log('Result:', data.result); // Log the result to the console
+
+      // Save the result to local storage
+      localStorage.setItem('predictionResult', data.result); // Assuming 'result' is the key in the response
+      
+      window.location.href = 'dashboard.html';  
     } else {
       // Prediction failed, display the error message
       alert(`Prediction failed: ${data.message}`);    

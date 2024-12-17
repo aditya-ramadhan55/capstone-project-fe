@@ -7,26 +7,34 @@
     <link rel="stylesheet" href="src/styles/styles.css">
 </head>
 <body>
-    <main>
+    <header>
         <h1>Survey</h1>
-        <form id="surveyForm" method="post">
-            <label for="gender">Gender:</label><br>
-            <input type="radio" id="gender_pria" name="gender" value="pria" required>
-            <label for="gender_pria">Pria</label><br>
-            <input type="radio" id="gender_wanita" name="gender" value="wanita" required>
-            <label for="gender_wanita">Wanita</label><br><br>
-
-            <label for="age">Age:</label><br>
-            <input type="number" id="age" name="age" min="1" required><br><br>
-
-            <label for="weight">Weight (kg):</label><br>
-            <input type="number" id="weight" name="weight" step="0.1" required><br><br>
-
-            <label for="height">Height (m):</label><br>
-            <input type="number" id="height" name="height" step="0.01" required><br><br>
-
-            <input type="submit" value="Submit">
-        </form>
+    </header>
+    <main id="surveyMain"> <!-- Added id to main -->
+        <p>Selamat datang! Silakan isi data survey di bawah ini untuk membantu kami memahami kesehatan Anda dengan lebih baik.</p>
+        <div class="survey-card"> <!-- Card wrapper -->
+            <form id="surveyForm" method="post">
+                <label for="gender">Gender:</label><br>
+                <div class="gender-options">
+                    <input type="radio" id="gender_pria" name="gender" value="pria" required>
+                    <label for="gender_pria">Pria</label>
+                    
+                    <input type="radio" id="gender_wanita" name="gender" value="wanita" required>
+                    <label for="gender_wanita">Wanita</label>
+                </div>
+    
+                <label for="age">Age:</label><br>
+                <input type="number" id="age" name="age" min="1" required><br><br>
+    
+                <label for="weight">Weight (kg):</label><br>
+                <input type="number" id="weight" name="weight" step="0.1" required><br><br>
+    
+                <label for="height">Height (m):</label><br>
+                <input type="number" id="height" name="height" step="0.01" required><br><br>
+    
+                <input type="submit" value="Submit">
+            </form>
+        </div> <!-- End of card wrapper -->
     </main>
     <script src="src/scripts/survey.js"></script>
 </body>

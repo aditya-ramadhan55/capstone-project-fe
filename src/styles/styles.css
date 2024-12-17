@@ -228,6 +228,88 @@ th {
   background-color: #f2f2f2; /* Light background for table headers */
 }
 
+/* Centering the main content in survey.html */
+#surveyMain {
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  min-height: 100vh; /* Ensure it takes at least the full height of the viewport */
+  padding: 20px; /* Add some padding */
+}
+
+/* Survey Card Styles */
+.survey-card {
+  background: #fff; /* White background for the card */
+  padding: 20px; /* Padding inside the card */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: calc(100% - 40px); /* Fill left and right with some margin */
+  margin: 20px auto; /* Center the card horizontally and add space above and below */
+  max-width: 600px; /* Max width for the card */
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Stack items vertically */
+}
+
+/* Ensure the form elements take full width */
+.survey-card form {
+  display: flex; /* Use flexbox for the form */
+  flex-direction: column; /* Stack form elements vertically */
+}
+
+/* Style for labels */
+.survey-card label {
+  font-weight: bold; /* Make labels bold */
+  margin-bottom: 10px; /* Space between label and input */
+  font-size: 1.1rem; /* Slightly larger font size */
+}
+
+/* Style for input fields */
+.survey-card input[type="radio"] {
+  margin-right: 10px; /* Space between radio button and label */
+}
+
+/* Style for input fields */
+.survey-card input[type="number"],
+.survey-card input[type="submit"] {
+  padding: 10px; /* Add padding */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 1rem; /* Consistent font size */
+  margin-bottom: 15px; /* Space below input fields */
+}
+
+/* Style for submit button */
+.survey-card input[type="submit"] {
+  background-color: #007bff; /* Primary color */
+  color: white; /* Text color */
+  cursor: pointer; /* Change cursor to pointer */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+/* Hover effect for submit button */
+.survey-card input[type="submit"]:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Style for gender options container */
+.gender-options {
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center items vertically */
+  margin-bottom: 15px; /* Space below the gender options */
+}
+
+/* Style for radio buttons */
+.gender-options input[type="radio"] {
+  margin-right: 5px; /* Space between radio button and label */
+}
+
+/* Style for labels */
+.gender-options label {
+  margin-right: 20px; /* Space between labels */
+  font-size: 1rem; /* Consistent font size */
+}
+
 /* Responsive Design */
 @media (max-width: 600px) {
   .menu-button {

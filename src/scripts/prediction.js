@@ -5,7 +5,6 @@ const ENDPOINT = {
 };
 
 const token = localStorage.getItem('token');
-console.log('Token:', token); // Log the token
 
 document.getElementById('surveyForm').addEventListener('submit', async function(event) {
 

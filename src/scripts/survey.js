@@ -1,4 +1,5 @@
 const BASE_URL = 'https://obesicheck-api-714486790107.asia-southeast2.run.app';
+const token = localStorage.getItem('token');
 
 document.getElementById('surveyForm').addEventListener('submit', async function(event) {
     event.preventDefault(); // Prevent page reload
@@ -21,6 +22,7 @@ document.getElementById('surveyForm').addEventListener('submit', async function(
         const response = await fetch(`${BASE_URL}/prediksi/addUserDetails`, {
             method: 'POST',
             headers: {
+                'Authorization': token,
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(userDetails),
@@ -31,7 +33,7 @@ document.getElementById('surveyForm').addEventListener('submit', async function(
         if (response.ok) {
             alert("User  details submitted successfully!");
             // Optionally redirect or clear the form
-            window.location.href = 'dashboard.html'; // Redirect to dashboard or another page
+            window.location.href = 'prediction.html'; // Redirect to dashboard or another page
         } else {
             alert("Failed to submit user details: " + data.message);
         }
